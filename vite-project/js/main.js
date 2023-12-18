@@ -1,18 +1,30 @@
 import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '../public/vite.svg'
-import { setupCounter } from './counter.js'
+import { DOMselectors } from './dom.js'
 
-const URL = "https://restcountries.com/v3.1/all";
-console.log(fetch(URL))
+DOMselectors.searchForm.addEventListener("submit", function(event) {
+  event.preventDefault()
+  const category = DOMselectors.searchSelector.value.toString()
+  const query = DOMselectors.searchBar.value
 
-async function getData(URL) {
-  try {
-    const response = await fetch(URL);
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
+  const URL = "https://restcountries.com/v3.1/" + category + "/" + query
+  console.log(fetch(URL))
+
+  async function getData(URL) {
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
-getData(URL);
+  getData(URL);
+
+  DOMselectors.result.innerHTML = "";
+  DOMselectors.result.insertAdjacentHTML(
+    "beforeend",
+    `
+      
+    `
+  );
+});

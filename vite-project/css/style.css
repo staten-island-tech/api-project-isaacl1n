@@ -1,10 +1,10 @@
 body {
   margin: 0px;
   padding: 0px;
+  text-align: center;
 }
 
 #header {
-  text-align: center;
   color: whitesmoke;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_the_United_Nations.svg/2560px-Flag_of_the_United_Nations.svg.png);
   background-repeat: no-repeat;
@@ -13,8 +13,34 @@ body {
   background-size: cover;
   font-family: 'Roboto', sans-serif;
   font-size: 3vw;
-  padding-top: 100px; padding-bottom: 100px;
+  padding-top: 8vw; padding-bottom: 8vw;
 }
   #header-title {
     margin-left: 50%;
+  }
+
+#search {
+  margin: 20px;
+}
+  #search-selector {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+  }
+    #selector-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: larger;
+    }
+  #search-bar {
+    margin: 20px;
+    padding: 10px;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+  }
+  #search-button {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    cursor: pointer;
   }

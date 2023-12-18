@@ -15,6 +15,25 @@
     <div id="header">
       <h1 id="header-title">Nations & Territories</h1>
     </div>
+    <form id="search">
+      <label for="categories" id="selector-label">Search by: </label>
+        <select name="categories" id="search-selector">
+          <option value="name">Territory Name</option>
+          <option value="alpha">Abbreviations & Codes</option>
+          <option value="currency">Currency</option>
+          <option value="demonym">Demonym</option>
+          <option value="lang">Language</option>
+          <option value="capital">Capital City</option>
+          <option value="region">Region</option>
+          <option value="subregion">Subregion</option>
+          <option value="translation">Translation</option>
+        </select><br>
+      <input type="text" name="query" id="search-bar" required><br>
+      <input type="submit" value="Search" id="search-button">
+    </form>
+    <div id="result">
+      
+    </div>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
