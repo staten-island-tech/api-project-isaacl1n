@@ -15,14 +15,20 @@ DOMselectors.searchForm.addEventListener("submit", function(event) {
       if (!response.ok) {
         DOMselectors.result.innerHTML = "";
         DOMselectors.error.innerHTML = "";
-        if (response.status === 403) {
-          throw new Error("403 Error: Access Forbidden" + 
+        if (response.status === 400) {
+          throw new Error("Error 400: Bad Request" + 
+            `
+              <p>The server did not understand your request.</p>
+            `
+          );
+        } else if (response.status === 403) {
+          throw new Error("Error 403: Access Forbidden" + 
             `
               <p>Your device may not access the server.</p>
             `
           );
         } else if (response.status === 404) {
-          throw new Error("404 Error: Not Found" + 
+          throw new Error("Error 404: Not Found" + 
             `
               <p>Have you spelled your query correctly?<p>
               <p>Is your query format correct?<p>
@@ -30,7 +36,7 @@ DOMselectors.searchForm.addEventListener("submit", function(event) {
             `
           );
         } else {
-          throw new Error(`${response.status} Error`);
+          throw new Error(`Error ${response.status}`);
         };
       };
       const data = await response.json();
