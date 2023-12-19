@@ -1,17 +1,17 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
 #header {
-  color: white;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_the_United_Nations.svg/2560px-Flag_of_the_United_Nations.svg.png);
   background-repeat: no-repeat;
   background-color: #009edb;
   background-position: -20vw;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  color: white;
   font-size: 3vw;
   padding-top: 8vw; padding-bottom: 8vw;
 }
@@ -24,11 +24,9 @@ body {
 }
   #search-selector {
     padding: 10px;
-    font-family: 'Roboto', sans-serif;
     font-size: larger;
   }
     #selector-label {
-      font-family: 'Roboto', sans-serif;
       font-size: larger;
     }
   #search-bar {
@@ -37,7 +35,6 @@ body {
     width: 50%;
     border: grey solid thin;
     border-radius: 50px;
-    font-family: 'Roboto', sans-serif;
     font-size: larger;
   }
   #search-button {
@@ -45,8 +42,40 @@ body {
     border: none;
     border-radius: 50px;
     background: #009edb;
-    font-family: 'Roboto', sans-serif;
-    font-size: larger;
     color: white;
+    font-size: larger;
     cursor: pointer;
   }
+
+#result {
+  margin: 5vw auto 0px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  max-width: 75%;
+}
+  .territory {
+    flex: 0 0 100%;
+    margin: 1vw 0px 1vw 0px;
+    max-width: 475px;
+    background: #009edb;
+    border-radius: 2vw;
+  }
+    .flag {
+      margin-top: 5%;
+      height: 12vw;
+    }
+    .name {
+      color: white;
+      font-size: 200%;
+    }
+      #official-name {
+        margin: -2vw 0px 2vw 0px;
+        font-size: 150%;
+      }
+    .info {
+      margin-left: 5%;
+      text-align: left;
+      color: white;
+      font-size: 133%;
+    }
