@@ -12,9 +12,31 @@ DOMselectors.searchForm.addEventListener("submit", function(event) {
   async function getData(URL) {
     try {
       const response = await fetch(URL);
+      if (!response.ok) {
+        DOMselectors.result.innerHTML = "";
+        DOMselectors.error.innerHTML = "";
+        if (response.status === 403) {
+          throw new Error("403 Error: Access Forbidden" + 
+            `
+              <p>Your device may not access the server.</p>
+            `
+          );
+        } else if (response.status === 404) {
+          throw new Error("404 Error: Not Found" + 
+            `
+              <p>Have you spelled your query correctly?<p>
+              <p>Is your query format correct?<p>
+              <p>Did you select the wrong search category?<p>
+            `
+          );
+        } else {
+          throw new Error(`${response.status} Error`);
+        };
+      };
       const data = await response.json();
       console.log(data);
       DOMselectors.result.innerHTML = "";
+      DOMselectors.error.innerHTML = "";
       data.forEach(territory => {
         DOMselectors.result.insertAdjacentHTML(
           "beforeend",
@@ -36,10 +58,10 @@ DOMselectors.searchForm.addEventListener("submit", function(event) {
       });
     } catch (error) {
       console.log(error);
-      DOMselectors.result.insertAdjacentHTML(
+      DOMselectors.error.insertAdjacentHTML(
         "beforeend",
         `
-          
+          <h3>${error.message}</h3>
         `
       );
     };
