@@ -64,14 +64,14 @@ body {
   }
     .flag {
       margin-top: 5%;
-      height: 9vw;
+      height: 10vmax;
     }
     .name {
       color: white;
       font-size: 200%;
     }
       #official-name {
-        margin: -1vw 0px 2vw 0px;
+        margin: -25px 0px 2vw 0px;
         font-size: 150%;
       }
     .info {
