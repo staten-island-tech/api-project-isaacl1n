@@ -48,11 +48,11 @@ DOMselectors.searchForm.addEventListener("submit", function(event) {
           "beforeend",
           `
             <div class="territory">
-              <img src="${territory.flags.png}" class="flag">
+              <img src="${territory.flags.png}" alt="${territory.flags.alt}" class="flag">
               <h2 class="name">${territory.name.common}</h2>
               <p class="name" id="official-name">${territory.name.official}</p>
               <p class="info">Capital: ${territory.capital}</p>
-              <p class="info">Area: ${territory.area} km<sup>2</sup></p>
+              <p class="info">Area: ${territory.area} sq km</p>
               <p class="info">Population: ${territory.population}</p>
               <p class="info">Region: ${territory.region}</p>
               <p class="info">Subregion: ${territory.subregion}</p>

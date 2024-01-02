@@ -44,7 +44,7 @@ body {
     border-radius: 50px;
     background: #009edb;
     color: white;
-    font-size: larger;
+    font-size: x-large;
     cursor: pointer;
   }
 
@@ -78,7 +78,7 @@ body {
       margin-left: 5%;
       text-align: left;
       color: white;
-      font-size: 133%;
+      font-size: 150%;
     }
 #error {
   font-size: 200%;
