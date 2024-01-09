@@ -42,14 +42,16 @@ async function getData(URL) {
           <div class="territory">
             <img src="${territory.flags.png}" alt="${territory.flags.alt}" class="flag">
             <h2 class="name">${territory.name.common}</h2>
-            <p class="name" id="official-name">${territory.name.official}</p>
-            <p class="info">Capital: ${territory.capital}</p>
-            <p class="info">Area: ${territory.area} sq km</p>
-            <p class="info">Population: ${territory.population}</p>
-            <p class="info">Region: ${territory.region}</p>
-            <p class="info">Subregion: ${territory.subregion}</p>
-            <p class="info">TLD: ${territory.tld[0]}</p>
-            <p class="info">Driving Side: ${territory.car.side}</p>
+              <h3 class="name" id="official-name">${territory.name.official}</h5>
+            <ul>
+              <li class="info">Capital: ${territory.capital}</li>
+              <li class="info">Area: ${territory.area} sq km</li>
+              <li class="info">Population: ${territory.population}</li>
+              <li class="info">Region: ${territory.region}</li>
+              <li class="info">Subregion: ${territory.subregion}</li>
+              <li class="info">TLD: ${territory.tld[0]}</li>
+              <li class="info">Driving Side: ${territory.car.side}</li>
+            </ul>
           </div>
         `
       );
